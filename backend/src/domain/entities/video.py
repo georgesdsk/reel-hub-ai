@@ -22,3 +22,8 @@ class Video(BaseModel):
     user_note: Optional[str] = None
     embedding: Optional[List[float]] = None  # 384 dims
     language: Optional[str] = None
+    telegram_user_id: Optional[int] = None
+    processing_status: str = "pending"
+    job_id: Optional[str] = None
+    error_message: Optional[str] = None
+    processed_at: Optional[datetime] = None
