@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy[asyncio]
+asyncpg
+pydantic[email]
+pydantic-settings
+alembic
+pgvector
+celery
+redis
+python-dotenv
+pytest
+pytest-asyncio
+httpx
+# faster-whisper  # Task 3
+# sentence-transformers # Task 3
