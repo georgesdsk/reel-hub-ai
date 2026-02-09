@@ -2,6 +2,36 @@
 
 Hexagonal architecture based backend for Personal Video Search App.
 
+## Architecture
+
+```text
+       +-----------------------------------------------------------+
+       |                        API (FastAPI)                      |
+       +-----------------------------------------------------------+
+                                     |
+       +-----------------------------------------------------------+
+       |                       USE CASES                           |
+       | (Ingest, Search, Detail, Transcribe)                      |
+       +-----------------------------------------------------------+
+               |                     |                     |
+    +-------------------+   +-------------------+   +-------------------+
+    |      DOMAIN       |   |      DOMAIN       |   |      DOMAIN       |
+    |     ENTITIES      |---|      PORTS        |---|      LOGIC        |
+    +-------------------+   +-------------------+   +-------------------+
+               |                     |                     |
+       +-----------------------------------------------------------+
+       |                       ADAPTERS                            |
+       | (DB, Telegram, AI, Queue, Storage)                        |
+       +-----------------------------------------------------------+
+```
+
+## Project Status
+
+- [x] **Task 1: Backend base + Domain + Database adapter** (Completed)
+- [ ] **Task 2: Telegram Bot + Celery workers** (Pending)
+- [ ] **Task 3: AI adapters (Whisper + Embeddings + Categorizer)** (Pending)
+- [ ] **Task 4: API REST + Búsqueda + Import Instagram** (Pending)
+
 ## Setup
 
 1. Install dependencies:
@@ -30,3 +60,15 @@ Hexagonal architecture based backend for Personal Video Search App.
 - `src/adapters`: Implementations of external services (DB, AI, etc.).
 - `src/api`: FastAPI routes and application setup.
 - `alembic`: Database migrations.
+
+## Verification
+
+To run tests:
+```bash
+pytest
+```
+
+To check health:
+```bash
+curl http://localhost:8000/health
+```
