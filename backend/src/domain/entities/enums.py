@@ -10,4 +10,6 @@ class Category(str, Enum):
     VIAJES = "viajes"
     EDUCACION = "educacion"
     ENTRETENIMIENTO = "entretenimiento"
+    NEGOCIOS = "negocios"
+    TECNOLOGIA = "tecnologia"
     OTROS = "otros"

@@ -27,3 +27,8 @@ class VideoModel(Base):
     user_note: Mapped[str] = mapped_column(Text, nullable=True)
     embedding: Mapped[list[float]] = mapped_column(Vector(384), nullable=True)
     language: Mapped[str] = mapped_column(String, nullable=True)
+    telegram_user_id: Mapped[int] = mapped_column(Integer, nullable=True)
+    processing_status: Mapped[str] = mapped_column(String, default="pending")
+    job_id: Mapped[str] = mapped_column(String, nullable=True)
+    error_message: Mapped[str] = mapped_column(Text, nullable=True)
+    processed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
